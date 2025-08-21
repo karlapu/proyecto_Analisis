@@ -13,15 +13,30 @@ import lombok.Data;
 @Data
 
 public class Sucursal {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "IdSucursal")
-private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idSucursal;
 
+    @Column(name = "Nombre", nullable = false, length = 100)
+    private String nombre;
 
+    @Column(name = "Direccion", nullable = false, length = 200)
+    private String direccion;
 
+    @Column(name = "IdEmpresa", nullable = false)
+    private Integer idEmpresa;
 
+    @Column(name = "FechaCreacion", nullable = false)
+    private Date fechaCreacion;
 
+    @Column(name = "UsuarioCreacion", nullable = false, length = 100)
+    private String usuarioCreacion;
 
+    @Column(name = "FechaModificacion")
+    private Date fechaModificacion;
+
+    @Column(name = "UsuarioModificacion", length = 100)
+    private String usuarioModificacion;
     
 }
+
